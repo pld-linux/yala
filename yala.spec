@@ -3,12 +3,12 @@
 Summary:	Yet Another LDAP Admin
 Summary(pl):	Jeszcze jedno narzêdzie do administrowania LDAP
 Name:		yala
-Version:	0.29
+Version:	0.30
 Release:	1
 License:	GPL v2
 Group:		Applications/Databases
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	52cd4cfe1959fa971a455874362c4131
+# Source0-md5:	f8810e588b3e3c3e1a8bad99d24e22fe
 Source1:	%{name}.conf
 Patch0:		%{name}-config.patch
 URL:		http://yala.sourceforge.net/
@@ -48,13 +48,14 @@ przeciwieñstwie do np. Microsoft Active Directory).
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{/etc/httpd,%{yaladir}/{images,include}}
+install -d $RPM_BUILD_ROOT{/etc/httpd,%{yaladir}/{images/icons,include}}
 
 install *.php *.html $RPM_BUILD_ROOT%{yaladir}
-install images/* $RPM_BUILD_ROOT%{yaladir}/images
+install images/*.png $RPM_BUILD_ROOT%{yaladir}/images
+install images/icons/* $RPM_BUILD_ROOT%{yaladir}/images/icons
 install include/* $RPM_BUILD_ROOT%{yaladir}/include
 
-install config.inc.php $RPM_BUILD_ROOT/etc/yala.conf
+install config.inc.php.example $RPM_BUILD_ROOT/etc/yala.conf
 ln -sf /etc/yala.conf $RPM_BUILD_ROOT%{yaladir}/config.inc.php
 
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/httpd
