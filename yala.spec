@@ -12,6 +12,7 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1:	%{name}.conf
 URL:		http://yala.sourceforge.net/
 Requires:	apache
+Requires:	php
 Requires:	php-ldap
 Requires(post,preun):	grep
 Requires(preun):	fileutils
