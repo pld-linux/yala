@@ -5,6 +5,7 @@ Release:	1
 License:	GPL v2
 Group:		Applications/Databases
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	6a1fc88225f05edaa9c22a755ab6cc31
 Source1:	%{name}.conf
 URL:		http://yala.sourceforge.net/
 Requires:	apache
