@@ -3,13 +3,14 @@
 Summary:	Yet Another LDAP Admin
 Summary(pl):	Jeszcze jedno narzêdzie do administrowania LDAP
 Name:		yala
-Version:	0.21
+Version:	0.28
 Release:	1
 License:	GPL v2
 Group:		Applications/Databases
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	5f25f012fb0d9c5596eb574b7d00d79a
+# Source0-md5:	9101cc9ab65b665383fcc0056b476956
 Source1:	%{name}.conf
+Patch0:		%{name}-config.patch
 URL:		http://yala.sourceforge.net/
 Requires:	apache
 Requires:	php
@@ -43,6 +44,7 @@ przeciwieñstwie do np. Microsoft Active Directory).
 
 %prep
 %setup -q
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -51,6 +53,9 @@ install -d $RPM_BUILD_ROOT{/etc/httpd,%{yaladir}/{images,include}}
 install *.php *.html $RPM_BUILD_ROOT%{yaladir}
 install images/* $RPM_BUILD_ROOT%{yaladir}/images
 install include/* $RPM_BUILD_ROOT%{yaladir}/include
+
+install config.inc.php $RPM_BUILD_ROOT/etc/yala.conf
+ln -sf /etc/yala.conf $RPM_BUILD_ROOT%{yaladir}/config.inc.php
 
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/httpd
 
@@ -78,11 +83,11 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHOR BUGS CREDITS ChangeLog README TODO
+%doc AUTHOR BUGS CREDITS ChangeLog README README.security TODO *.example
 %dir %{yaladir}
 %{yaladir}/images
 %{yaladir}/include
-%{yaladir}/[!c]*.php
+%{yaladir}/*.php
 %{yaladir}/*.html
-%config(noreplace) %verify(not mtime size md5) %{yaladir}/config.inc.php
+%config(noreplace) %verify(not mtime size md5) /etc/yala.conf
 %config(noreplace) %verify(not mtime size md5) /etc/httpd/%{name}.conf
