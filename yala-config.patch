@@ -1,5 +1,5 @@
---- yala/config.inc.php.orig	Wed Oct  8 22:56:51 2003
-+++ yala/config.inc.php	Wed Oct  8 22:57:22 2003
+--- yala/config.inc.php.example.orig	Wed Oct  8 22:56:51 2003
++++ yala/config.inc.php.example	Wed Oct  8 22:57:22 2003
 @@ -12,7 +12,7 @@
  #
  
