@@ -3,12 +3,12 @@
 Summary:	Yet Another LDAP Admin
 Summary(pl):	Jeszcze jedno narzêdzie do administrowania LDAP
 Name:		yala
-Version:	0.28
+Version:	0.29
 Release:	1
 License:	GPL v2
 Group:		Applications/Databases
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	9101cc9ab65b665383fcc0056b476956
+# Source0-md5:	52cd4cfe1959fa971a455874362c4131
 Source1:	%{name}.conf
 Patch0:		%{name}-config.patch
 URL:		http://yala.sourceforge.net/
