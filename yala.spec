@@ -47,7 +47,7 @@ if [ -f /etc/httpd/httpd.conf ] && ! grep -q "^Include.*yala.conf" /etc/httpd/ht
         echo "Include /etc/httpd/yala.conf" >> /etc/httpd/httpd.conf
 fi
 if [ -f /var/lock/subsys/httpd ]; then
-	/etc/rc.d/init.d/httpd restart 1>&2
+	/usr/sbin/apachectl restart 1>&2
 fi
 
 %preun
@@ -57,7 +57,7 @@ if [ "$1" = "0" ]; then
                 /etc/httpd/httpd.conf.tmp
         mv -f /etc/httpd/httpd.conf.tmp /etc/httpd/httpd.conf
 	if [ -f /var/lock/subsys/httpd ]; then
-		/etc/rc.d/init.d/httpd restart 1>&2
+		/usr/sbin/apachectl restart 1>&2
 	fi
 fi
 
