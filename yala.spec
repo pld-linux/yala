@@ -1,4 +1,7 @@
+# TODO:
+# - config file shouldn't be in %{_datadir}
 Summary:	Yet Another LDAP Admin
+Summary(pl):	Jeszcze jedno narzêdzie do administrowania LDAP
 Name:		yala
 Version:	0.12
 Release:	1
@@ -14,7 +17,7 @@ Requires(post,preun):	grep
 Requires(preun):	fileutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	yaladir	%{_datadir}/%{name}
+%define		yaladir		%{_datadir}/%{name}
 
 %description
 YALA is a web-based LDAP administration GUI. The idea is to simplify
@@ -23,8 +26,19 @@ features, though to stay a general-purpose program (unlike some LDAP
 browsers written specifically for managing users on the system). The
 goal is to simplify the administration but not to make the YALA user
 stupid: to achieve this, we try to show the user what YALA does behind
-the scenes, what it sends to the server (unlike Micro$oft Active
+the scenes, what it sends to the server (unlike Microsoft Active
 Directory, for example).
+
+%description -l pl
+YALA to oparty na WWW graficzny interfejs do administrowania LDAP.
+Jego ide± jest uproszczenie administrowania katalogami przy u¿yciu
+graficznego interfejsu i mi³ych cech, ale pozostanie programem
+ogólnego przeznaczenia (w przeciwieñstwie do niektórych przegl±darek
+LDAP napisanych specjalnie do zarz±dzania u¿ytkownikami w systemie).
+Celem jest uproszczenie administracji, ale nie czynienie u¿ytkownika
+YALA g³upim - aby to osi±gn±æ, program próbuje pokazaæ u¿ytkownikowi,
+co YALA wykonuje pomiêdzy ekranami i co wysy³a do serwera (w
+przeciwieñstwie do np. Microsoft Active Directory).
 
 %prep
 %setup -q
@@ -33,11 +47,11 @@ Directory, for example).
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{/etc/httpd,%{yaladir}/{images,include}}
 
-install *.php *.html $RPM_BUILD_ROOT%{yaladir}/
-install images/* $RPM_BUILD_ROOT%{yaladir}/images/
-install include/* $RPM_BUILD_ROOT%{yaladir}/include/
+install *.php *.html $RPM_BUILD_ROOT%{yaladir}
+install images/* $RPM_BUILD_ROOT%{yaladir}/images
+install include/* $RPM_BUILD_ROOT%{yaladir}/include
 
-install %SOURCE1 $RPM_BUILD_ROOT/etc/httpd/
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/httpd
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -67,7 +81,7 @@ fi
 %dir %{yaladir}
 %{yaladir}/images
 %{yaladir}/include
-%{yaladir}/[^c]*.php
+%{yaladir}/[!c]*.php
 %{yaladir}/*.html
 %config(noreplace) %verify(not mtime size md5) %{yaladir}/config.inc.php
 %config(noreplace) %verify(not mtime size md5) /etc/httpd/%{name}.conf
