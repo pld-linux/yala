@@ -1,0 +1,11 @@
+--- yala/config.inc.php.orig	Wed Oct  8 22:56:51 2003
++++ yala/config.inc.php	Wed Oct  8 22:57:22 2003
+@@ -12,7 +12,7 @@
+ #
+ 
+ # Main path in the unix filesystem
+-define("UNIX_PATH",	"/var/www/htdocs/yala");
++define("UNIX_PATH",	"/usr/share/yala");
+ define("INCLUDE_PATH",	UNIX_PATH."/include");
+ define("IMAGES_PATH",	UNIX_PATH."/images");
+ 
