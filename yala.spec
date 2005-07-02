@@ -1,5 +1,3 @@
-# TODO:
-# - config file shouldn't be in %{_datadir}
 Summary:	Yet Another LDAP Admin
 Summary(pl):	Jeszcze jedno narzêdzie do administrowania LDAP
 Name:		yala
@@ -7,7 +5,7 @@ Version:	0.30
 Release:	1
 License:	GPL v2
 Group:		Applications/Databases
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/yala/%{name}-%{version}.tar.gz
 # Source0-md5:	f8810e588b3e3c3e1a8bad99d24e22fe
 Source1:	%{name}.conf
 Patch0:		%{name}-config.patch
