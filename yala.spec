@@ -10,7 +10,7 @@ Source0:	http://dl.sourceforge.net/yala/%{name}-%{version}.tar.gz
 Source1:	%{name}.conf
 Patch0:		%{name}-config.patch
 URL:		http://yala.sourceforge.net/
-Requires:	apache
+Requires:	webserver = apache
 Requires:	php
 Requires:	php-ldap
 Requires(post,preun):	grep
