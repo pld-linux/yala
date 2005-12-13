@@ -10,11 +10,11 @@ Source0:	http://dl.sourceforge.net/yala/%{name}-%{version}.tar.gz
 Source1:	%{name}.conf
 Patch0:		%{name}-config.patch
 URL:		http://yala.sourceforge.net/
-Requires:	webserver = apache
-Requires:	php
-Requires:	php-ldap
 Requires(post,preun):	grep
 Requires(preun):	fileutils
+Requires:	php
+Requires:	php-ldap
+Requires:	webserver = apache
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		yaladir		%{_datadir}/%{name}
@@ -88,5 +88,5 @@ fi
 %{yaladir}/include
 %{yaladir}/*.php
 %{yaladir}/*.html
-%config(noreplace) %verify(not mtime size md5) /etc/yala.conf
-%config(noreplace) %verify(not mtime size md5) /etc/httpd/%{name}.conf
+%config(noreplace) %verify(not md5 mtime size) /etc/yala.conf
+%config(noreplace) %verify(not md5 mtime size) /etc/httpd/%{name}.conf
