@@ -1,3 +1,5 @@
+# TODO
+# - webapps
 Summary:	Yet Another LDAP Admin
 Summary(pl):	Jeszcze jedno narzêdzie do administrowania LDAP
 Name:		yala
@@ -12,9 +14,9 @@ Patch0:		%{name}-config.patch
 URL:		http://yala.sourceforge.net/
 Requires(post,preun):	grep
 Requires(preun):	fileutils
-Requires:	php
-Requires:	php-ldap
+Requires:	php(ldap)
 Requires:	webserver = apache
+Requires:	webserver(php)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		yaladir		%{_datadir}/%{name}
