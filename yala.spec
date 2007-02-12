@@ -1,7 +1,7 @@
 # TODO
 # - webapps
 Summary:	Yet Another LDAP Admin
-Summary(pl):	Jeszcze jedno narzêdzie do administrowania LDAP
+Summary(pl.UTF-8):   Jeszcze jedno narzÄ™dzie do administrowania LDAP
 Name:		yala
 Version:	0.30
 Release:	1
@@ -31,16 +31,16 @@ stupid: to achieve this, we try to show the user what YALA does behind
 the scenes, what it sends to the server (unlike Microsoft Active
 Directory, for example).
 
-%description -l pl
+%description -l pl.UTF-8
 YALA to oparty na WWW graficzny interfejs do administrowania LDAP.
-Jego ide± jest uproszczenie administrowania katalogami przy u¿yciu
-graficznego interfejsu i mi³ych cech, ale pozostanie programem
-ogólnego przeznaczenia (w przeciwieñstwie do niektórych przegl±darek
-LDAP napisanych specjalnie do zarz±dzania u¿ytkownikami w systemie).
-Celem jest uproszczenie administracji, ale nie czynienie u¿ytkownika
-YALA g³upim - aby to osi±gn±æ, program próbuje pokazaæ u¿ytkownikowi,
-co YALA wykonuje pomiêdzy ekranami i co wysy³a do serwera (w
-przeciwieñstwie do np. Microsoft Active Directory).
+Jego ideÄ… jest uproszczenie administrowania katalogami przy uÅ¼yciu
+graficznego interfejsu i miÅ‚ych cech, ale pozostanie programem
+ogÃ³lnego przeznaczenia (w przeciwieÅ„stwie do niektÃ³rych przeglÄ…darek
+LDAP napisanych specjalnie do zarzÄ…dzania uÅ¼ytkownikami w systemie).
+Celem jest uproszczenie administracji, ale nie czynienie uÅ¼ytkownika
+YALA gÅ‚upim - aby to osiÄ…gnÄ…Ä‡, program prÃ³buje pokazaÄ‡ uÅ¼ytkownikowi,
+co YALA wykonuje pomiÄ™dzy ekranami i co wysyÅ‚a do serwera (w
+przeciwieÅ„stwie do np. Microsoft Active Directory).
 
 %prep
 %setup -q
