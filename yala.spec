@@ -1,7 +1,7 @@
 # TODO
 # - webapps
 Summary:	Yet Another LDAP Admin
-Summary(pl.UTF-8):   Jeszcze jedno narzędzie do administrowania LDAP
+Summary(pl.UTF-8):	Jeszcze jedno narzędzie do administrowania LDAP
 Name:		yala
 Version:	0.30
 Release:	1
